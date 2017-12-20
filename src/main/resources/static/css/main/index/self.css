@@ -1,0 +1,302 @@
+/* 笔记本宽度限定 */
+@media(min-width: 992px) and (max-width: 1199px){
+	.container{
+		width: 1110px;
+		margin: 0 auto;
+	}
+}
+/* 表单字段必填样式 */
+.required {
+    position: relative;
+}
+.required:after {
+    position: absolute;
+    top: 5px;
+    display: inline-block;
+    font-size: 17px;
+    color: #ea644a;
+    content: '*';
+}
+
+.input-group-addon,.input-group .cancel-chosen{
+	width: 88px;
+	padding: 0;
+}
+.form-group{
+	margin-bottom: 0!important
+}
+.chosen-container, .form-control{
+	width: 174px!important;
+}
+/* 带搜索框的select列表 */
+.chosen-container-single .chosen-single{
+	height: 34px;
+	line-height: 34px;
+	border-radius: 0;
+}
+/* 页面主体颜色风格 */
+.nav-header{
+	background-image: none;
+	background-color: #373d41;
+}
+.logotitle{
+	margin-left: 10px
+}
+.navbar-static-side #side-menu, body.mini-navbar .nav-header{
+	background-color: #42485B;
+}
+.navbar-static-side, body.mini-navbar .nav-header{
+	background-color: #293038;
+}
+.navbar-default .nav > li > a:focus, .navbar-default .nav > li > a:hover, .page-tabs a.active i:hover, .page-tabs a.active:hover{
+	background-color: #00C1DE
+}
+.nav > li.active{
+	/*background-color: #e7edf2*/
+	border-left: none;
+}
+.nav > li > a, .nav > li.active > a, .logo-element{
+	color: #fff;
+}
+.nav .active .nav-second-level a:hover{
+	background-color: #4A5064
+}
+.btn-info, .btn-info:focus, .btn-info:hover,.page-tabs a.active{
+	background-color: #00C1DE;
+	color: #fff
+}
+
+.navbar-fixed-top, .navbar-static-top{
+	background-color: #373d41
+}
+.nav-border-left{
+	border-left: 1px solid #333;
+}
+.content-tabs{
+	border-bottom: 2px solid #333
+}
+.navbar-right, .nav.navbar-right > li > a{
+	color: #fff
+}
+.navbar-right .font-bold{
+	margin-right: 5px
+}
+.nav>li>a:focus, .nav>li>a:hover{
+	background-color: #00C1DE
+}
+/* 导航栏 content tabs 样式调整 */
+.roll-right.J_tabRight{
+	right: 100px;
+}
+.roll-right.btn-group{
+	right: 20px;
+}
+/* 首页 */
+.count-info .label{
+	right: 0px;
+	top: 8px;
+}
+
+/* 证书配置 */
+.w70{
+	display: inline-block;
+	width: 70px;
+}
+.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th,.table > caption{
+	border: 1px solid #ddd;
+	vertical-align: middle;
+}
+.table caption{
+	padding: 0; 
+}
+.main-content{
+	border: 1px solid #bbb;
+	/*box-shadow: 0 1px 1px rgba(0,0,0,0.15);*/
+	margin-top: 30px;
+}
+.main-content h2{
+	background-color: #f5f5f6;
+	margin-top: 0;
+	font-size: 18px;
+	font-weight: 700;
+	/*border-bottom: 1px solid #797979;*/
+	box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+	color: #666
+}
+.main-footer{
+	background-color: #f5f5f6;
+	border-top: 1px solid #bbb;
+}
+.modal-body .chosen-container{
+	width: 100% !important;
+}
+#startTime, #endTime,#cStartTime,#cEndTime{
+	display: inline-block;
+	padding: 0;
+	height: 34px;
+	border: 1px solid #aaa;
+}
+.certificate-type input{
+	border-radius: 0;
+	border: 1px solid #aaa;
+}
+
+/* 字段配置 */
+.ui-state-default .delLi{
+	position: absolute; 
+	display: none; 
+	right: 0; 
+	top: 0; 
+	font-style: normal; 
+	cursor: pointer;
+}
+
+/* SKU信息列表页 */
+.skuInfoList .chosen-container-single .chosen-single{
+	height: 34px;
+	line-height: 34px;
+}
+/*.categoryReview .chosen-container, .skuReview .chosen-container, .linkedCertifacates .chosen-container{
+	width: 88px!important;
+}*/
+/* SKU信息详情页 */
+.edit-val{
+	width: 320px;
+}
+.w85{
+	width: 85px;
+}
+.percent100{
+	width: 100%;
+}
+#carousel-817660{
+	height: 488px;
+}
+#carousel-817660 .carousel-inner .item img{
+	width: 100%;
+	height: 488px;
+}
+.w100, .sku-msgdet .chosen-container{
+	width: 100px!important;
+}
+.small-carousel .carousel-control{
+	width: auto;
+	bottom: auto;
+	top: 45%;
+}
+#slideBanner{
+	height: 100px; 
+	padding-top: 8px
+}
+#slideBanner .slideBox{
+	width: 354px; 
+	overflow: hidden; 
+	margin: 0 6px;
+}
+#slideBanner .rollist{
+	width: 9999px;
+}
+#slideBanner .rollist .slideItem{
+	width: 80px;
+	height: 90px;
+	float: left;
+	border: 1px solid #aaa;
+	margin-right: 10px;
+	text-align: center;
+	padding-top: 35px;
+	font-weight: 700;
+	cursor: pointer;
+
+}
+#slideBanner .l, #slideBanner .r{
+	position: absolute;
+	top: 50%;
+	font-weight: 700
+}
+#slideBanner .l{
+	left: -5px;
+}
+#slideBanner .r{
+	right: -5px
+}
+#addSkuSuit ul, #addSkuSuit ul li{
+	padding: 0;
+	margin: 0
+}
+#addSkuSuit ul li{
+	list-style: none;
+	width: 86px;
+	border: 1px solid #eee;
+	padding: 10px 0;
+	cursor: pointer;
+	position: relative;
+}
+#addSkuSuit li i{
+	font-size: 12px;
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0
+}
+#addSkuSuit ul .active{
+	color: #fff;
+	background-color: #00C1DE
+}
+
+/* 新增税则 */
+.newTaxRule .chosen-container{
+	width: 200px!important;
+}
+
+.ui-state-default,.ui-widget-content .ui-state-default,.ui-widget-header .ui-state-default{
+	border: 1px solid #c5c5c5;
+	background: #f6f6f6;
+	font-weight: normal;
+	color: #454545;
+}
+.ui-sortable-handle {
+	-ms-touch-action: none;
+	touch-action: none;
+}
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+    border: 1px solid #ddd;
+    background:#00C1DE;
+    color: #fff;
+}
+.ui-draggable, .ui-droppable {
+	background-position: top;
+}
+#sortable1, #sortable2 {
+	list-style-type: none;
+	overflow: auto;
+	padding-left: 20px;
+	padding-top: 20px;
+	margin: 0 auto;
+	width: 700px
+}
+#sortable1 li, #sortable2 li {
+	margin: 15px;
+	padding: 5px;
+	width: 300px;
+	float: left;
+	text-align: center;
+}
+#startUsingFiled, #stopUsingFiled, .border-797979{
+	border: 1px solid #797979
+}
+/* 品类信息列表 */
+#leadingIn .view{
+    width: 80%; 
+    height: 26px; 
+    line-height: 24px; 
+    border: 1px solid #aaa; 
+    top: 0;
+    right: 25px; 
+    background: #fafafa; 
+    z-index: 0; 
+}
+/* 品类选择页面 */
+.on{
+	background-color: #00C1DE!important;
+	color: #fff;
+}

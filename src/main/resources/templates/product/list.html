@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <title>亚马逊产品图片参考系统</title>
+    <script th:src="@{/jsLoad/code/load.js}" include="../head.html"></script>
+    <link type="text/css" rel="stylesheet" th:href="@{/css/plugin/jeDate/jedate.css}" />
+    <link type="text/css" rel="stylesheet" th:href="@{/css/plugin/layout/layout.css}" />
+</head>
+<body class="gray-bg">
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>详情查询</h5>
+                </div>
+                <div class="ibox-content">
+                    <form class="form-inline request" method="get" th:action="@{/product/list}" id="form1">
+                        <div class="form-group">
+                            <label>关键词</label>
+                            <input type="text" class="form-control" th:value="${cond.the_check_c}"
+                                   name="the_check_c" id="the_check_c"/>
+                        </div>
+                        <div class="form-group">
+                            <label>标题</label>
+                            <input type="text" class="form-control" th:value="${cond.title_c}"
+                                   name="title_c" id="title_c"/>
+                        </div>
+                        <div class="form-group">
+                            <label>使用状态</label>
+                            <select id="employ_c" name="employ_c" class="form-control" >
+                                <option th:each="dict:${employ_c}" th:value="${dict.key}" th:text="${dict.value}" th:selected="${cond.employ_c == dict.key}"></option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>参考等级</label>
+                            <select id="reference_c" name="reference_c" class="form-control" >
+                                <option th:each="dict:${reference_c}" th:value="${dict.key}" th:text="${dict.value}" th:selected="${cond.reference_c == dict.key}"></option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>开始日期：</label>
+                            <input type="text" class="form-control" th:value="${cond.startTime}"
+                                   name="startTime" id="start_date"/>
+                        </div>
+                        <div class="form-group">
+                            <label>结束日期：</label>
+                            <input type="text" class="form-control" th:value="${cond.endTime}" name="endTime"
+                                   id="end_date"/>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">查询</button>
+                        </div>
+
+                        <div class="hr-line-dashed"></div>
+                        <div class="tabled_scroll scrollbar">
+                            <table class="table table-striped table-bordered table-hover table_width">
+                                <thead>
+                                <tr>
+                                    <th width="50">序号</th>
+                                    <th width="160">搜索关键词</th>
+                                    <th width="260">产品标题</th>
+                                    <th>产品链接</th>
+                                    <th>主图</th>
+                                    <th>抓取时间</th>
+                                    <th>说明</th>
+                                    <th>使用状态</th>
+                                    <th width="80">参考等级</th>
+                                    <th width="80">操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    <tr th:each="data,dataStr : ${dataList}">
+                                        <td th:text="${dataStr.count}">序号</td>
+                                        <td th:text="${data.the_check}">搜索关键词</td>
+                                        <td th:text="${data.title}">产品标题</td>
+                                        <td><a target="_blank" th:href="${data.detail_url}">产品链接</a></td>
+                                        <td><img width="80" th:src="${data.img0}"/></td>
+                                        <td th:text="${data.get_time}">抓取时间</td>
+                                        <td th:text="${data.remark}">说明</td>
+                                        <td>
+                                            <span th:text="( (${data.employ} == 0)? '未使用' : '已使用')"></span>
+                                        </td>
+                                        <td>
+                                            <select th:id="'reference'+ ${dataStr.index}" class="form-control" th:onchange="'javascript:product.updateReference(\'/product/updateReference\',\'' +${data.product_id} +'\',\''+${dataStr.index} +'\')'">
+                                                <option th:each="dict:${reference}" th:value="${dict.key}" th:text="${dict.value}" th:selected="${dict.key == data.reference}"></option>
+                                            </select>
+                                        </td>
+                                        <td width="150">
+                                            <div class="dropdown btn-group">
+                                                <input type="button" class="bnt btn-sm btn-info" value="套图详情"
+                                                       th:onclick="'javascript:common.showAddOrEdit(\'套图详情\',\'/product/detail?product_id='+ ${data.product_id} + '\')'" />
+                                            </div>
+                                            <div class="dropdown btn-group">
+                                                <input type="button" class="bnt btn-sm btn-info" value="删除"
+                                                       th:onclick="'javascript:common.delete(\'/product/delete\',\''+${data.product_id}+'\')'"/>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div align="right" class="pagediv">
+                            <div>
+                                <input type="hidden" id="pageCount" th:value="${cond.pageCount}" />
+                                <input type="hidden" id="pageSize2" th:value="${cond.pageSize}" />
+                                <span th:if="${cond.curPage>1}">
+                                    <span class="lastPage" onclick="page.firstPage()" title="首页">&nbsp;</span>
+                                </span>
+                                <span th:if="${cond.curPage>1}">
+                                    <span class="nextPage" onclick="page.previousPage()" title="上一页">&nbsp;</span>
+                                </span>
+                                <span th:if="${cond.pageCount>1 and cond.curPage != cond.pageCount}">
+                                    <span class="firstpage" onclick="page.nextPage()" title="下一页">&nbsp;</span>
+                                </span>
+                                <span th:if="${cond.pageCount>1 and cond.curPage != cond.pageCount}">
+                                    <span class="previousPage" onclick="page.lastPage()" title="末页">&nbsp;</span>
+                                </span>
+                                共<span th:text="${cond.rowCount}"></span>条/<span th:text="${cond.pageCount}"></span>页&nbsp;&nbsp;每页
+                                <select name="pageSize" id="pageSize" class="pageSize" onchange="page.goto_Page();"></select> 条&nbsp;&nbsp;
+                                第<input type="text" th:value="${cond.curPage}" value="" name="curPage" id="curPage"
+                                        class="pageSize"/>页
+                                <span th:if="${cond.pageCount>1}">
+                                    <span class="gopage" onclick="page.goto_Page()" title="转到">&nbsp;</span>
+                                </span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<input id="layerwin" value="" type="hidden"/>
+<script type="text/javascript" th:src="@{/jsLoad/code/load.js}" include="../foot.html"></script>
+<!--加本页面 的js文件与js代码-->
+<script th:inline="javascript" th:src="@{/js/pluginHttps/common/common.js}"></script>
+<script th:inline="javascript" th:src="@{/js/pluginHttps/common/page.js}"></script>
+<script th:inline="javascript" th:src="@{/js/plugin/jeDate/jquery.jedate.min.js}"></script>
+<script th:inline="javascript" th:src="@{/js/pluginHttps/product/product.js}"></script>
+<script th:inline="javascript" th:src="@{/js/plugin/layer/layer.min.js}"></script>
+</body>
+</html>

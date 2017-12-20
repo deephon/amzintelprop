@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="commonHeader(title)">
+    <meta charset="utf-8" />
+    <title th:text="${title}"></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" th:href="@{/img/favicon.ico}" />
+    <link th:href="@{../css/font-awesome.min.css}" rel="stylesheet" />          	<!-- 常用图标字体文件 来自http://fontawesome.io -->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" /> <!-- 框架核心CSS文件 -->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/common.css}" />		<!-- 自定义通用库样式 -->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.min862f.css}" />
+    <link type="text/css" rel="stylesheet" th:href="@{/css/plugin/jeDate/jedate.css}" />
+    <link type="text/css" rel="stylesheet" th:href="@{/css/plugin/layout/layout.css}" />
+    <link type="text/css" rel="stylesheet" th:href="@{/css/plugin/jqGrid/ui.jqgrid.css}" />
+
+</head>
+<body>
+<div th:fragment="commonJS">
+    <script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+    <script th:inline="javascript" th:src="@{/js/common/common.js}"></script>
+    <script th:inline="javascript" th:src="@{/js/common/page.js}"></script>
+    <script th:inline="javascript" th:src="@{/js/plugin/jeDate/jquery.jedate.min.js}"></script>
+    <script th:inline="javascript" th:src="@{/js/plugin/layer/layer.min.js}"></script>
+    <script th:inline="javascript" th:src="@{/js/plugin/jqGrid/i18n/grid.locale-cn.js}"></script>
+    <script th:inline="javascript" th:src="@{/js/plugin/jqGrid/jquery.jqGrid.min.js}"></script>
+</div>
+</body>
+</html>

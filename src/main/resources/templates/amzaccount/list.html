@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="common/common :: commonHeader('账号管理')">
+</head>
+<body class="gray-bg">
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>账号管理</h5>
+                </div>
+                <div class="ibox-content">
+                    <form class="form-inline request" method="get" th:action="@{/amzaccount/list}" id="form1">
+                        <div class="form-group">
+                            <label>账号</label>
+                            <input type="text" class="form-control" th:value="${cond.account_c}"
+                                   name="account_c" id="account_c"/>
+                        </div>
+                        <div class="form-group">
+                            <label>负责人</label>
+                            <input type="text" class="form-control" th:value="${cond.principal_c}"
+                                   name="principal_c" id="principal_c"/>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">查询</button>
+                        </div>
+
+                        <div class="hr-line-dashed"></div>
+                        <div class="tabled_scroll scrollbar">
+                            <table class="table table-striped table-bordered table-hover table_width">
+                                <thead>
+                                <tr>
+                                    <th width="50">序号</th>
+                                    <th width="160">账号</th>
+                                    <th width="260">负责人</th>
+                                    <th>联系方式</th>
+                                    <th>备注</th>
+                                    <th width="80">操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr th:each="data,dataStr : ${dataList}">
+                                    <td><span th:text="${dataStr.count}"></span><input type="checkbox" name="chk" th:value="${data.account_id}" /></td>
+                                    <td th:text="${data.account}">账号</td>
+                                    <td th:text="${data.principal}">负责人</td>
+                                    <td><a target="_blank" th:href="${data.contact}">联系方式</a></td>
+                                    <td th:text="${data.remark}">说明</td>
+                                    <td width="150">
+                                        <div class="dropdown btn-group">
+                                            <input type="button" class="bnt btn-sm btn-info" value="修改"
+                                                   th:onclick="'javascript:common.showAddOrEdit(\'账号修改\',\'/amzaccount/detail?account_id='+ ${data.account_id} + '\')'" />
+                                        </div>
+                                        <div class="dropdown btn-group">
+                                            <input type="button" class="bnt btn-sm btn-info" value="删除"
+                                                   th:onclick="'javascript:common.delete(\'/product/delete\',\''+${data.account_id}+'\')'"/>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div align="right" class="pagediv">
+                            <div>
+                                <input type="hidden" id="pageCount" th:value="${cond.pageCount}" />
+                                <input type="hidden" id="pageSize2" th:value="${cond.pageSize}" />
+                                <span th:if="${cond.curPage>1}">
+                                    <span class="lastPage" onclick="page.firstPage()" title="首页">&nbsp;</span>
+                                </span>
+                                <span th:if="${cond.curPage>1}">
+                                    <span class="nextPage" onclick="page.previousPage()" title="上一页">&nbsp;</span>
+                                </span>
+                                <span th:if="${cond.pageCount>1 and cond.curPage != cond.pageCount}">
+                                    <span class="firstpage" onclick="page.nextPage()" title="下一页">&nbsp;</span>
+                                </span>
+                                <span th:if="${cond.pageCount>1 and cond.curPage != cond.pageCount}">
+                                    <span class="previousPage" onclick="page.lastPage()" title="末页">&nbsp;</span>
+                                </span>
+                                共<span th:text="${cond.rowCount}"></span>条/<span th:text="${cond.pageCount}"></span>页&nbsp;&nbsp;每页
+                                <select name="pageSize" id="pageSize" class="pageSize" onchange="page.goto_Page();"></select> 条&nbsp;&nbsp;
+                                第<input type="text" th:value="${cond.curPage}" value="" name="curPage" id="curPage"
+                                        class="pageSize"/>页
+                                <span th:if="${cond.pageCount>1}">
+                                    <span class="gopage" onclick="page.goto_Page()" title="转到">&nbsp;</span>
+                                </span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<input id="layerwin" value="" type="hidden"/>
+<div th:include="/common/common :: commonJS">
+</div>
+</body>
+</html>

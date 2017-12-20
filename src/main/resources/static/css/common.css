@@ -1,0 +1,195 @@
+/* 有棵树通用CSS库文件 */
+.layertable{margin-top: 20px;}
+img,object {
+	vertical-align: middle;
+	border: 0
+}
+.yks-vam{
+	vertical-align: middle;
+}
+.yks-vat{
+	vertical-align: top;
+}
+.yks-ur img {
+	max-width: 100%;
+	_display: none
+}
+.yks-ur table {
+	table-layout: fixed;
+	border-collapse: separate;
+	border-spacing: 2px
+}
+.yks-ur td {
+	white-space: normal;
+	word-wrap: break-word;
+	word-break: break-all
+}
+.yks-pr {position: relative}
+.yks-pa {position: absolute}
+.yks-pa0 {
+	position: absolute;
+	left: 0;
+	top: 0
+}
+.yks-pf {position: fixed}
+.yks-dn {display: none}
+.yks-db {display: block}
+.yks-di {display: inline}
+
+.yks-dib {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1
+}
+
+.yks-vh {
+	visibility: hidden
+}
+.yks-cf,.yks-o,.yks-w {*zoom: 1}
+.yks-cf:after,.yks-o:after,.yks-w:after {
+	display: block;
+	visibility: hidden;
+	clear: both;
+	height: 0;
+	content: '\20'
+}
+
+.yks-fl {float: left}
+.yks-fr {float: right}
+
+.yks-lh0 {line-height: 0}
+.yks-lh1 {line-height: 1}
+.yks-lh150 {line-height: 150%}
+.yks-lh180 {line-height: 180%}
+.yks-lh200 {line-height: 200%}
+
+.yks-tl {text-align: left}
+.yks-tc {text-align: center}
+.yks-tr {text-align: right}
+
+.yks-fs12 {font-size: 12px}
+.yks-fs14 {font-size: 14px}
+.yks-fs16 {font-size: 16px}
+.yks-fs18 {font-size: 18px}
+.yks-fs20 {font-size: 20px}
+.yks-fs22 {font-size: 22px}
+.yks-fs24 {font-size: 24px}
+.yks-fs26 {font-size: 26px}
+.yks-fs28 {font-size: 28px}
+.yks-fs30 {font-size: 30px}
+
+.yks-fwb {font-weight: 700}
+.yks-fwn {font-weight: 400}
+.yks-fsn {font-style: normal}
+
+.yks-e {
+	overflow: hidden;
+	-ms-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	word-wrap: normal
+}
+.yks-b {
+	word-wrap: break-word;
+	word-break: break-all
+}
+.yks-ub {
+	white-space: nowrap;
+	word-wrap: normal
+}
+
+.yks-cred {color: red}
+.yks-cblue {color: #2664a2}
+.yks-corg {color: #f77301}
+.yks-c4 {color: #444}
+.yks-c5 {color: #555}
+.yks-c6 {color: #666}
+.yks-c8 {color: #888}
+.yks-c9 {color: #999}
+.yks-c0 {color: #000}
+.yks-ca {color: #aaa}
+
+.yks-ml0 {margin-left: 0}
+.yks-mr0 {margin-right: 0}
+.yks-mt0 {margin-top: 0}
+.yks-mb0 {margin-bottom: 0}
+
+.yks-ml3 {margin-left: 3px}
+.yks-ml5 {margin-left: 5px}
+.yks-ml10 {margin-left: 10px}
+.yks-ml15 {margin-left: 15px}
+.yks-ml20 {margin-left: 20px}
+.yks-ml25 {margin-left: 25px}
+.yks-ml30 {margin-left: 30px}
+
+.yks-mt3 {margin-top: 3px}
+.yks-mt5 {margin-top: 5px}
+.yks-mt10 {margin-top: 10px}
+.yks-mt15 {margin-top: 15px}
+.yks-mt20 {margin-top: 20px}
+.yks-mt25 {margin-top: 25px}
+.yks-mt30 {margin-top: 30px}
+
+.yks-mr3 {margin-right: 3px}
+.yks-mr5 {margin-right: 5px}
+.yks-mr10 {margin-right: 10px}
+.yks-mr15 {margin-right: 15px}
+.yks-mr20 {margin-right: 20px}
+.yks-mr25 {margin-right: 25px}
+.yks-mr30 {margin-right: 30px}
+
+.yks-pl0 {padding-left: 0}
+.yks-pr0 {padding-right: 0}
+.yks-pt0 {padding-top: 0}
+.yks-pb0 { padding-bottom: 0}
+
+.yks-pl3 {padding-left: 3px}
+.yks-pl5 {padding-left: 5px}
+.yks-pl10 {padding-left: 10px}
+.yks-pl15 {padding-left: 15px}
+.yks-pl20 {padding-left: 20px}
+.yks-pl25 {padding-left: 25px}
+.yks-pl30 {padding-left: 30px}
+
+.yks-pt3 {padding-top: 3px}
+.yks-pt5 {padding-top: 5px}
+.yks-pt10 {padding-top: 10px}
+.yks-pt15 {padding-top: 15px}
+.yks-pt20 {padding-top: 20px}
+.yks-pt25 {padding-top: 25px}
+.yks-pt30 {padding-top: 30px}
+
+.yks-pr3 {padding-right: 3px}
+.yks-pr5 {padding-right: 5px}
+.yks-pr10 {padding-right: 10px}
+.yks-pr15 {padding-right: 15px}
+.yks-pr20 {padding-right: 20px}
+.yks-pr25 {padding-right: 25px}
+.yks-pr30 {padding-right: 30px}
+
+.yks-pb3 {padding-bottom: 3px}
+.yks-pb5 {padding-bottom: 5px}
+.yks-pb10 {padding-bottom: 10px}
+.yks-pb15 {padding-bottom: 15px}
+.yks-pb20 {padding-bottom: 20px}
+.yks-pb25 {padding-bottom: 25px}
+.yks-pb30 {padding-bottom: 30px}
+
+.split-line{
+	border-bottom: 1px dashed #ddd
+}
+.yks-vline{
+	height: 15px;
+	border: 1px solid #797979;
+	vertical-align: middle;
+}
+.yks-cp{
+	cursor: pointer;
+}
+.yks-bn{
+	border: none;
+	background-color: transparent;
+}
+.yks-bceee{
+	background-color: #eee
+}
